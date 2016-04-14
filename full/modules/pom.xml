@@ -252,6 +252,13 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-zookeeper</artifactId>
+            <!-- [FIXME #21] Investigate why slf4j-log4j12 causes example integration tests to fail -->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
